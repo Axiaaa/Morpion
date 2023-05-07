@@ -1,7 +1,12 @@
 let joueur = 0
 let joueur1_nom = "Joueur 1"
 let joueur2_nom = "Joueur 2"
-let statut_jeu = 0
+let statut_jeu = 0 /*
+                    0 -> Non lancé
+                    1 -> En cours
+                    2 -> Egalité
+                    3 -> Victoire/défaite
+                        */
 
 function init() {
     if (joueur == 0 ) {
@@ -56,64 +61,134 @@ function fin_jeu() {
     }
     console.log(jeu)
     if 
-    ((jeu[0] == "X" && jeu[1] == "X" && jeu[2] == "X") || (jeu[0] == "O" && jeu[1] == "O" && jeu[2] == "O"))
+    (jeu[0] == "X" && jeu[1] == "X" && jeu[2] == "X") 
     {
         statut_jeu = 3;
         console.log(statut_jeu);
         console.log(jeu);
-    } // première ligne
-    
-    else if ((jeu[3] == "X" && jeu[4] == "X" && jeu[5] == "X") || (jeu[3] == "O" && jeu[4] == "O" && jeu[5] == "O")) 
+        document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur1_nom + " !" 
+    } // première ligne X
+    else if  (jeu[0] == "O" && jeu[1] == "O" && jeu[2] == "O")
     {
         statut_jeu = 3;
         console.log(statut_jeu);
         console.log(jeu);
-    
-    }    // deuxième ligne
-    else if ((jeu[6] == "X" && jeu[7] == "X" && jeu[8] == "X") || (jeu[6] == "O" && jeu[7] == "O" && jeu[8] == "O"))
-    {
-        statut_jeu = 3;
-        console.log(statut_jeu);
-        console.log(jeu);
-    
-    }     // troisième ligne
-    else if ((jeu[1] == "X" && jeu[4] == "X" && jeu[7] == "X") || (jeu[1] == "O" && jeu[4] == "O" && jeu[7] == "O"))   
-    {
-        statut_jeu = 3;
-        console.log(statut_jeu);
-        console.log(jeu);
-    
-    }    // première colonne
-    else if ((jeu[0] == "X" && jeu[3] == "X" && jeu[6] == "X") || (jeu[0] == "O" && jeu[3] == "O" && jeu[6] == "O"))   
-    {
-        statut_jeu = 3;
-        console.log(statut_jeu);
-        console.log(jeu);
-    
-    }  // deuxième colonne
-    else if ((jeu[2] == "X" && jeu[5] == "X" && jeu[8] == "X") || (jeu[2] == "O" && jeu[5] == "O" && jeu[8] == "O"))
-    {
-        statut_jeu = 3;
-        console.log(statut_jeu);
-        console.log(jeu);
-    }    // troisième colonne
-    else if ((jeu[0] == "X" && jeu[4] == "X" && jeu[8] == "X") || (jeu[0] == "O" && jeu[4] == "O" && jeu[8] == "O"))
-    {
-        statut_jeu = 3;
-        console.log(statut_jeu);
-        console.log(jeu);
-    
-    }    // diagonale haut-gauche à bas-droite
-    else if ((jeu[2] == "X" && jeu[4] == "X" && jeu[6] == "X") || (jeu[2] == "O" && jeu[4] == "O" && jeu[6] == "O"))
-    {
-        statut_jeu = 3;
-        console.log(statut_jeu);
-        console.log(jeu);
-    }   // diagonale haut-droite à bas-gauche
-    
+        document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur2_nom + " !" 
+    } // première ligne O 
 
-
+    else if (jeu[3] == "X" && jeu[4] == "X" && jeu[5] == "X") 
+    {
+        statut_jeu = 3;
+        console.log(statut_jeu);
+        console.log(jeu);
+        document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur1_nom + " !" 
     
+    }    // deuxième ligne X
+    else if  (jeu[3] == "O" && jeu[4] == "O" && jeu[5] == "O") 
+    {
+        statut_jeu = 3;
+        console.log(statut_jeu);
+        console.log(jeu);
+        document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur2_nom + " !" 
+    
+    }    // deuxième ligne O 
+
+    else if (jeu[6] == "X" && jeu[7] == "X" && jeu[8] == "X") 
+    {
+        statut_jeu = 3;
+        console.log(statut_jeu);
+        console.log(jeu);
+        document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur1_nom + " !" 
+    
+    }     // troisième ligne X
+    else if (jeu[6] == "O" && jeu[7] == "O" && jeu[8] == "O")
+    {
+        statut_jeu = 3;
+        console.log(statut_jeu);
+        console.log(jeu);
+        document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur2_nom + " !" 
+    
+    }     // troisième ligne O
+    else if (jeu[1] == "X" && jeu[4] == "X" && jeu[7] == "X") 
+    {
+        statut_jeu = 3;
+        console.log(statut_jeu);
+        console.log(jeu);
+        document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur1_nom + " !" 
+    
+    }    // deuxième colonne X
+    else if (jeu[1] == "O" && jeu[4] == "O" && jeu[7] == "O") 
+    {
+        statut_jeu = 3;
+        console.log(statut_jeu);
+        console.log(jeu);
+        document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur2_nom + " !" 
+    
+    }    // deuxième colonne O 
+    else if (jeu[0] == "X" && jeu[3] == "X" && jeu[6] == "X")
+    {
+        statut_jeu = 3;
+        console.log(statut_jeu);
+        console.log(jeu);
+        document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur1_nom + " !" 
+    
+    }  // première colonne X
+    else if (jeu[0] == "O" && jeu[3] == "O" && jeu[6] == "O") 
+    {
+        statut_jeu = 3;
+        console.log(statut_jeu);
+        console.log(jeu);
+        document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur2_nom + " !" 
+    
+    }  // première colonne O 
+    else if (jeu[2] == "X" && jeu[5] == "X" && jeu[8] == "X") 
+    {
+        statut_jeu = 3;
+        console.log(statut_jeu);
+        console.log(jeu);
+        document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur1_nom + " !" 
+    }    // troisième colonne X
+    else if (jeu[2] == "O" && jeu[5] == "O" && jeu[8] == "O") 
+    {
+        statut_jeu = 3;
+        console.log(statut_jeu);
+        console.log(jeu);
+        document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur2_nom + " !" 
+    }    // troisième colonne O 
+    else if (jeu[0] == "X" && jeu[4] == "X" && jeu[8] == "X")
+    {
+        statut_jeu = 3;
+        console.log(statut_jeu);
+        console.log(jeu);
+        document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur1_nom + " !" 
+    
+    }    // diagonale haut-gauche à bas-droite X
+    else if (jeu[0] == "O" && jeu[4] == "O" && jeu[8] == "O")
+    {
+        statut_jeu = 3;
+        console.log(statut_jeu);
+        console.log(jeu);
+        document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur2_nom + " !" 
+    
+    }    // diagonale haut-gauche à bas-droite O
+    else if (jeu[2] == "X" && jeu[4] == "X" && jeu[6] == "X")
+    {
+        statut_jeu = 3;
+        console.log(statut_jeu);
+        console.log(jeu);
+        document.getElementById("txt_joueur").innerHTML = "Victoire de " + joueur1_nom + " !" 
+    }   // diagonale haut-droite à bas-gauche X
+    else if (jeu[2] == "O" && jeu[4] == "O" && jeu[6] == "O")
+    {
+        statut_jeu = 3;
+        console.log(statut_jeu);
+        console.log(jeu);
+        document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur2_nom + " !" 
+    }   // diagonale haut-droite à bas-gauche O
+
+    if (statut_jeu === 3) {
+        document.getElementById("bouton_jouer").innerHTML = "Recommencer"
+    }
 }
 
 function player_name() {
