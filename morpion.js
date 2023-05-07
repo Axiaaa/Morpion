@@ -1,10 +1,7 @@
 let joueur = 0
 let joueur1_nom = "Joueur 1"
 let joueur2_nom = "Joueur 2"
-let statut_jeu = 0 /* 0 = Non lancé 
-                      1 = En cours 
-                      2 = Fini avec un gagnant
-                      3 = Egalité*/
+let statut_jeu = 0
 
 function init() {
     if (joueur == 0 ) {
@@ -37,25 +34,83 @@ function Case(number) {
             boutton.innerHTML = "X";
             document.getElementById("txt_joueur").innerHTML = "A " + joueur1_nom + " de jouer !";
             joueur = 1;
+            fin_jeu()
                 } 
             else if (joueur === 1) {
             boutton.innerHTML = "O";
             document.getElementById("txt_joueur").innerHTML = "A " + joueur2_nom + " de jouer !";
             joueur = 0;
+            fin_jeu()
                 }
         }
     }
-    
-    // for (let i = 1; i < 9; i++) {
-    //     while (document.getElementById("case" + i).innerText !== "") {}
-    //      document.getElementById("bouton_jouer").innerText = "Recommencer"
-    // }
 
     }
 }
 
 
 function fin_jeu() {
+    const jeu = []
+    for (let i = 1; i < 10; i++) {
+        jeu.push(document.getElementById("case" + i).innerText)
+    }
+    console.log(jeu)
+    if 
+    ((jeu[0] == "X" && jeu[1] == "X" && jeu[2] == "X") || (jeu[0] == "O" && jeu[1] == "O" && jeu[2] == "O"))
+    {
+        statut_jeu = 3;
+        console.log(statut_jeu);
+        console.log(jeu);
+    } // première ligne
+    
+    else if ((jeu[3] == "X" && jeu[4] == "X" && jeu[5] == "X") || (jeu[3] == "O" && jeu[4] == "O" && jeu[5] == "O")) 
+    {
+        statut_jeu = 3;
+        console.log(statut_jeu);
+        console.log(jeu);
+    
+    }    // deuxième ligne
+    else if ((jeu[6] == "X" && jeu[7] == "X" && jeu[8] == "X") || (jeu[6] == "O" && jeu[7] == "O" && jeu[8] == "O"))
+    {
+        statut_jeu = 3;
+        console.log(statut_jeu);
+        console.log(jeu);
+    
+    }     // troisième ligne
+    else if ((jeu[1] == "X" && jeu[4] == "X" && jeu[7] == "X") || (jeu[1] == "O" && jeu[4] == "O" && jeu[7] == "O"))   
+    {
+        statut_jeu = 3;
+        console.log(statut_jeu);
+        console.log(jeu);
+    
+    }    // première colonne
+    else if ((jeu[0] == "X" && jeu[3] == "X" && jeu[6] == "X") || (jeu[0] == "O" && jeu[3] == "O" && jeu[6] == "O"))   
+    {
+        statut_jeu = 3;
+        console.log(statut_jeu);
+        console.log(jeu);
+    
+    }  // deuxième colonne
+    else if ((jeu[2] == "X" && jeu[5] == "X" && jeu[8] == "X") || (jeu[2] == "O" && jeu[5] == "O" && jeu[8] == "O"))
+    {
+        statut_jeu = 3;
+        console.log(statut_jeu);
+        console.log(jeu);
+    }    // troisième colonne
+    else if ((jeu[0] == "X" && jeu[4] == "X" && jeu[8] == "X") || (jeu[0] == "O" && jeu[4] == "O" && jeu[8] == "O"))
+    {
+        statut_jeu = 3;
+        console.log(statut_jeu);
+        console.log(jeu);
+    
+    }    // diagonale haut-gauche à bas-droite
+    else if ((jeu[2] == "X" && jeu[4] == "X" && jeu[6] == "X") || (jeu[2] == "O" && jeu[4] == "O" && jeu[6] == "O"))
+    {
+        statut_jeu = 3;
+        console.log(statut_jeu);
+        console.log(jeu);
+    }   // diagonale haut-droite à bas-gauche
+    
 
 
     
