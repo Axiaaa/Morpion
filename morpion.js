@@ -1,7 +1,10 @@
 let joueur = 0
 let joueur1_nom = "Joueur 1"
 let joueur2_nom = "Joueur 2"
-let statut_jeu = 0
+let statut_jeu = 0 /* 0 = Non lancé 
+                      1 = En cours 
+                      2 = Fini avec un gagnant
+                      3 = Egalité*/
 
 function init() {
     if (joueur == 0 ) {
