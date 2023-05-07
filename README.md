@@ -1,4 +1,4 @@
-Morpion en HTML.
+Morpion en HTML/JS/CSS.
 
 Fait majoritairement avec w3school --> https://www.w3schools.com/
 
