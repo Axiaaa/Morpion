@@ -59,21 +59,21 @@ function fin_jeu() {
     for (let i = 1; i < 10; i++) {
         jeu.push(document.getElementById("case" + i).innerText)
     }
+
     console.log(jeu)
+    egalite(jeu)
     
     if 
     (jeu[0] == "X" && jeu[1] == "X" && jeu[2] == "X") 
     {
         statut_jeu = 3;
         console.log(statut_jeu);
-        console.log(jeu);
         document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur1_nom + " !" 
     } // première ligne X
     else if  (jeu[0] == "O" && jeu[1] == "O" && jeu[2] == "O")
     {
         statut_jeu = 3;
         console.log(statut_jeu);
-        console.log(jeu);
         document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur2_nom + " !" 
     } // première ligne O 
 
@@ -81,7 +81,6 @@ function fin_jeu() {
     {
         statut_jeu = 3;
         console.log(statut_jeu);
-        console.log(jeu);
         document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur1_nom + " !" 
     
     }    // deuxième ligne X
@@ -89,7 +88,6 @@ function fin_jeu() {
     {
         statut_jeu = 3;
         console.log(statut_jeu);
-        console.log(jeu);
         document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur2_nom + " !" 
     
     }    // deuxième ligne O 
@@ -98,7 +96,6 @@ function fin_jeu() {
     {
         statut_jeu = 3;
         console.log(statut_jeu);
-        console.log(jeu);
         document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur1_nom + " !" 
     
     }     // troisième ligne X
@@ -106,7 +103,6 @@ function fin_jeu() {
     {
         statut_jeu = 3;
         console.log(statut_jeu);
-        console.log(jeu);
         document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur2_nom + " !" 
     
     }     // troisième ligne O
@@ -114,7 +110,6 @@ function fin_jeu() {
     {
         statut_jeu = 3;
         console.log(statut_jeu);
-        console.log(jeu);
         document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur1_nom + " !" 
     
     }    // deuxième colonne X
@@ -122,7 +117,6 @@ function fin_jeu() {
     {
         statut_jeu = 3;
         console.log(statut_jeu);
-        console.log(jeu);
         document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur2_nom + " !" 
     
     }    // deuxième colonne O 
@@ -130,7 +124,6 @@ function fin_jeu() {
     {
         statut_jeu = 3;
         console.log(statut_jeu);
-        console.log(jeu);
         document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur1_nom + " !" 
     
     }  // première colonne X
@@ -138,7 +131,6 @@ function fin_jeu() {
     {
         statut_jeu = 3;
         console.log(statut_jeu);
-        console.log(jeu);
         document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur2_nom + " !" 
     
     }  // première colonne O 
@@ -146,21 +138,18 @@ function fin_jeu() {
     {
         statut_jeu = 3;
         console.log(statut_jeu);
-        console.log(jeu);
         document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur1_nom + " !" 
     }    // troisième colonne X
     else if (jeu[2] == "O" && jeu[5] == "O" && jeu[8] == "O") 
     {
         statut_jeu = 3;
         console.log(statut_jeu);
-        console.log(jeu);
         document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur2_nom + " !" 
     }    // troisième colonne O 
     else if (jeu[0] == "X" && jeu[4] == "X" && jeu[8] == "X")
     {
         statut_jeu = 3;
         console.log(statut_jeu);
-        console.log(jeu);
         document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur1_nom + " !" 
     
     }    // diagonale haut-gauche à bas-droite X
@@ -168,7 +157,6 @@ function fin_jeu() {
     {
         statut_jeu = 3;
         console.log(statut_jeu);
-        console.log(jeu);
         document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur2_nom + " !" 
     
     }    // diagonale haut-gauche à bas-droite O
@@ -176,14 +164,14 @@ function fin_jeu() {
     {
         statut_jeu = 3;
         console.log(statut_jeu);
-        console.log(jeu);
+
         document.getElementById("txt_joueur").innerHTML = "Victoire de " + joueur1_nom + " !" 
     }   // diagonale haut-droite à bas-gauche X
     else if (jeu[2] == "O" && jeu[4] == "O" && jeu[6] == "O")
     {
         statut_jeu = 3;
         console.log(statut_jeu);
-        console.log(jeu);
+
         document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur2_nom + " !" 
     }   // diagonale haut-droite à bas-gauche O
 
@@ -191,11 +179,17 @@ function fin_jeu() {
         document.getElementById("bouton_jouer").innerHTML = "Recommencer"
     }
 
+}
+
+
+function egalite(jeu) {
     if (!jeu.includes('')) 
     {document.getElementById("txt_joueur").innerHTML = "Egalité";
     document.getElementById("bouton_jouer").innerHTML = "Recommencer";
     statut_jeu = 2;}
 }
+
+
 
 function player_name() {
     joueur1_nom = document.getElementById("j1").value;
