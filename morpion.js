@@ -1,4 +1,4 @@
-let joueur = 0
+let tour = 0 // 0 -> X, 1 -> O
 let joueur1_nom = "Joueur 1"
 let joueur2_nom = "Joueur 2"
 let statut_jeu = 0 /*
@@ -9,25 +9,36 @@ let statut_jeu = 0 /*
                         */
 
 function init() {
-    if (joueur == 0 ) {
-        document.getElementById("txt_joueur").innerHTML = "A " + joueur1_nom + " de jouer !";
-        joueur = 1
-    } else if (joueur == 1) {
-        document.getElementById("txt_joueur").innerHTML = "A " + joueur2_nom + " de jouer !";
-        joueur = 0
-    }
+    /*
+    Initialisation du jeu quand le bouton jouer est cliqué
+    =====================
+    Paramètre : aucun
+    ===================
+    Retour : aucun
+    */
+
+    tour = 0
+    document.getElementById("txt_joueur").innerHTML = "A " + joueur1_nom + " de jouer !";
+    document.getElementById("bouton_jouer").innerHTML = "Recommencer";
 
     for (let i = 1; i < 10; i++) {
         document.getElementById("case" + i).innerHTML = "";
 
     }
 
-    statut_jeu = 1
-} 
+    statut_jeu = 1;
+}
 
 
 
 function Case(number) {
+    /*
+    Fonction qui permet de jouer
+    =====================
+    Paramètre : number (int) qui représente la case sur laquelle le joueur a cliqué.
+    ===================
+    Retour : aucun
+    */
     let boutton = document.getElementById("case" + number);
     if (statut_jeu === 0) {
         null
@@ -35,16 +46,16 @@ function Case(number) {
             
     if (boutton.innerText !== "X") {
         if (boutton.innerText !== "O") {
-            if (joueur === 0) {
+            if (tour === 0) {
             boutton.innerHTML = "X";
             document.getElementById("txt_joueur").innerHTML = "A " + joueur1_nom + " de jouer !";
-            joueur = 1;
+            tour = 1;
             fin_jeu()
                 } 
-            else if (joueur === 1) {
+            else if (tour === 1) {
             boutton.innerHTML = "O";
             document.getElementById("txt_joueur").innerHTML = "A " + joueur2_nom + " de jouer !";
-            joueur = 0;
+            tour = 0;
             fin_jeu()
                 }
         }
