@@ -1,6 +1,6 @@
-### Morpion (2 joueurs)
+# Morpion (2 joueurs)
 
-#Voici les différentes fonctionnalités disponibles. 
+### Voici les différentes fonctionnalités disponibles. 
 
 - Victoires/Défaites
 
