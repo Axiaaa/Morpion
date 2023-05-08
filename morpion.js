@@ -22,8 +22,7 @@ function init() {
     document.getElementById("bouton_jouer").innerHTML = "Recommencer";
 
     for (let i = 1; i < 10; i++) {
-        document.getElementById("case" + i).innerHTML = "";
-
+        document.getElementById("case" + i).innerHTML = ""; /* Vide les cases du jeu*/
     }
 
     statut_jeu = 1;
@@ -32,48 +31,58 @@ function init() {
 
 
 function Case(number) {
+
     /*
-    Fonction qui permet de jouer
+    Fonction qui permet de jouer un tour en cliquant sur une case
     =====================
     Paramètre : number (int) qui représente la case sur laquelle le joueur a cliqué.
     ===================
     Retour : aucun
     */
+
     let boutton = document.getElementById("case" + number);
     if (statut_jeu === 0) {
         null
     } else if (statut_jeu === 1) {
-            
+
     if (boutton.innerText !== "X") {
         if (boutton.innerText !== "O") {
             if (tour === 0) {
             boutton.innerHTML = "X";
-            document.getElementById("txt_joueur").innerHTML = "A " + joueur1_nom + " de jouer !";
+            document.getElementById("txt_joueur").innerHTML = "A " + joueur2_nom + " de jouer !";
             tour = 1;
-            fin_jeu()
+            fin_jeu();
                 } 
             else if (tour === 1) {
             boutton.innerHTML = "O";
             document.getElementById("txt_joueur").innerHTML = "A " + joueur1_nom + " de jouer !";
             tour = 0;
-            fin_jeu()
+            fin_jeu();
                 }
+            }
         }
-    }
-
     }
 }
 
-
 function fin_jeu() {
-    const jeu = []
+
+    /*
+    Fonction qui permet de vérifier si le jeu est fini
+    Appelle la fonction egalite() en cas d'égalité
+    =====================
+    Paramètre : aucun
+    ===================
+    Retour : aucun
+    */
+
+    const jeu = [] /* Tableau qui contient les valeurs des cases du jeu --> ['', '', '', '', '', '', '', '', '']*/
     for (let i = 1; i < 10; i++) {
         jeu.push(document.getElementById("case" + i).innerText)
     }
 
-    console.log(jeu)
-    egalite(jeu)
-    
+    console.log(jeu);
+    egalite(jeu);
+        
     if 
     (jeu[0] == "X" && jeu[1] == "X" && jeu[2] == "X") 
     {
@@ -194,24 +203,40 @@ function fin_jeu() {
 
 
 function egalite(jeu) {
+
+    /*
+    Fonction qui permet de vérifier si "jeu" est plein
+    S'éxécute à chaque tour, mais est overwrite par les possibilités de victoire
+    =====================
+    Paramètre : jeu (array) qui représente le tableau des cases du jeu
+    ===================
+    Retour : aucun
+    */
+
     if (!jeu.includes('')) 
     {document.getElementById("txt_joueur").innerHTML = "Egalité";
-    document.getElementById("bouton_jouer").innerHTML = "Recommencer";
     statut_jeu = 2;}
 }
 
 
 
-function player_name() {
+function noms_joueurs() {
+
+    /*
+    Fonction qui permet de récupérer les noms des joueurs et les mets dans les variables joueur1_nom et joueur2_nom
+    =====================
+    Paramètre : aucun
+    ===================
+    Retour : aucun
+    */
+
     joueur1_nom = document.getElementById("j1").value;
     if (document.getElementById("j1").value === "") { 
         joueur1_nom = "Joueur 1"
     }
-    console.log(document.getElementById("j1").value)
 
     joueur2_nom = document.getElementById("j2").value;
     if (document.getElementById("j2").value === "") { 
         joueur2_nom = "Joueur 2"
     }
-    console.log(document.getElementById("j2").value)
   }
