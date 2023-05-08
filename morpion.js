@@ -60,6 +60,7 @@ function fin_jeu() {
         jeu.push(document.getElementById("case" + i).innerText)
     }
     console.log(jeu)
+    
     if 
     (jeu[0] == "X" && jeu[1] == "X" && jeu[2] == "X") 
     {
@@ -189,6 +190,11 @@ function fin_jeu() {
     if (statut_jeu === 3) {
         document.getElementById("bouton_jouer").innerHTML = "Recommencer"
     }
+
+    if (!jeu.includes('')) 
+    {document.getElementById("txt_joueur").innerHTML = "Egalité";
+    document.getElementById("bouton_jouer").innerHTML = "Recommencer";
+    statut_jeu = 2;}
 }
 
 function player_name() {
