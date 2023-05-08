@@ -1,6 +1,6 @@
 # Morpion (2 joueurs) - v1.1.3
 
-### Voici les différentes fonctionnalités disponibles. 
+### Voici les différentes fonctionnalités disponibles :
 
 - Victoires/Défaites
 
