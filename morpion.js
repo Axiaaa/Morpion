@@ -54,7 +54,7 @@ function Case(number) {
                 } 
             else if (tour === 1) {
             boutton.innerHTML = "O";
-            document.getElementById("txt_joueur").innerHTML = "A " + joueur2_nom + " de jouer !";
+            document.getElementById("txt_joueur").innerHTML = "A " + joueur1_nom + " de jouer !";
             tour = 0;
             fin_jeu()
                 }
