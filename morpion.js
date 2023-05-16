@@ -23,7 +23,7 @@ function init() {
 
     for (let i = 1; i < 10; i++) {
         document.getElementById("case" + i).innerHTML = ""; /* Vide les cases du jeu*/
-        document.getElementById("case" + i).style.color = "#FFFFFF"
+        document.getElementById("case" + i).style.color = "#FFFFFF" //Remets les couleurs classiques
     }
 
     statut_jeu = 1;
@@ -196,7 +196,7 @@ function fin_jeu() {
         document.getElementById("txt_joueur").innerHTML = "Victoire de "  + joueur2_nom + " !" 
     }   // diagonale haut-droite à bas-gauche O
 
-    if (statut_jeu === 3) {
+    if (statut_jeu === 3) { //Changement de couleur quand victoire
         for (let i = 1; i < 10; i++) {
             if (document.getElementById("case" + i).innerText === "X") {
             document.getElementById("case" + i).style.color = "#11998e";
