@@ -1,5 +1,4 @@
 body {
-    color: white;
     background: linear-gradient(to bottom, #2b2a2a 0%,#4d5350 100%);
     font-family: sans-serif 
 }
@@ -11,7 +10,7 @@ table {
     margin-left: auto;
     margin-right: auto;
     border-collapse: collapse;
-
+    color: white;
 
 }
 
@@ -39,6 +38,7 @@ td {
 #txt_joueur {
 
   text-align: center;
+  color: white;
 }
 
 
@@ -82,38 +82,14 @@ form__group {
     top : 230px;
     left : 20px;
     position: absolute;
-
-  }
-    
-  .form__field:focus {
-    ~ .form__label {
-      top: 250;
-      display: block;
-      transition: 0.2s;
-      font-size: 1rem;
-      color: white;
-      font-weight:700;
-    }
-    padding-bottom: 6px;  
-    font-weight: 700;
-    border-width: 3px;
-    border-image: linear-gradient(to right, #11998e,#38ef7d);
-    border-image-slice: 1;
-  }
-  /* reset input */
-  .form__field{
-    &:required,&:invalid { box-shadow:none; }
   }
 
-  #j2
-{
+#j2 {
   top : 300px;
   color: white;
   font-family: sans-serif
 }
 
-  #j1{
-
+#j1 {
     color: white;
-
-  }
+}

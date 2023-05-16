@@ -1,4 +1,4 @@
-# Morpion (2 joueurs) - v1.1.3
+# Morpion (2 joueurs) - v1.2.3
 
 ### Voici les différentes fonctionnalités disponibles :
 

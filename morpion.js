@@ -23,6 +23,7 @@ function init() {
 
     for (let i = 1; i < 10; i++) {
         document.getElementById("case" + i).innerHTML = ""; /* Vide les cases du jeu*/
+        document.getElementById("case" + i).style.color = "#FFFFFF"
     }
 
     statut_jeu = 1;
@@ -196,10 +197,19 @@ function fin_jeu() {
     }   // diagonale haut-droite à bas-gauche O
 
     if (statut_jeu === 3) {
-        document.getElementById("bouton_jouer").innerHTML = "Recommencer"
+        for (let i = 1; i < 10; i++) {
+            if (document.getElementById("case" + i).innerText === "X") {
+            document.getElementById("case" + i).style.color = "#11998e";
+            document.getElementById("case" + i).style.borderColor = "#FFFFFF"; 
+            }
+            else if (document.getElementById("case" + i).innerText === "O") {
+                document.getElementById("case" + i).style.color = "#38ef7d";
+                document.getElementById("case" + i).style.borderColor = "#FFFFFF"
+            }
+        }        
     }
-
 }
+
 
 
 function egalite(jeu) {
@@ -213,9 +223,10 @@ function egalite(jeu) {
     Retour : aucun
     */
 
-    if (!jeu.includes('')) 
-    {document.getElementById("txt_joueur").innerHTML = "Egalité";
-    statut_jeu = 2;}
+    if (!jeu.includes('')) {
+    document.getElementById("txt_joueur").innerHTML = "Egalité";
+    statut_jeu = 2;
+    }
 }
 
 
@@ -239,4 +250,4 @@ function noms_joueurs() {
     if (document.getElementById("j2").value === "") { 
         joueur2_nom = "Joueur 2"
     }
-  }
+}
